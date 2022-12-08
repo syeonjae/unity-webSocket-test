@@ -11,6 +11,5 @@ public class UserPosInfo : WebSocketBehavior
     {
         Cw.UserPos feed = Serializer.Deserialize<Cw.UserPos>(new MemoryStream(e.RawData));
         Debug.Log($"{feed.name} : ({feed.PosX}, {feed.PosY}, {feed.PoxZ})");
-
     }
 }
