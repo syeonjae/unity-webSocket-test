@@ -8,11 +8,7 @@ public class WebSocketClient : MonoBehaviour
 {
     WebSocket ws = new WebSocket("ws://localhost:8080/UserPosInfo");
 
-    private void Awake()
-    {
-        Camera.main.transform.SetParent(transform);
-        Camera.main.transform.localPosition = new Vector3(0, 0, 0);
-    }
+
     private void Start()
     {
 
@@ -26,21 +22,16 @@ public class WebSocketClient : MonoBehaviour
 
     private void Update()
     {
-        // Move Logic
-        float mouseX = Input.GetAxis("Horizontal") * Time.deltaTime * 110.0f;
-        float mouseZ = Input.GetAxis("Vertical") * Time.deltaTime * 4f;
-
-        transform.Rotate(0, mouseX, 0);
-        transform.Translate(0, 0, mouseZ);
-
         // Req Logic
         Vector3 pos = this.transform.position;
         var userPos = new Cw.UserPos
         {
+            name = gameObject.name,
             MemoberIndex = 1,
             PosX = (int)pos.x,
             PosY = (int)pos.y,
             PoxZ = (int)pos.z,
+
         };
         using (var memoryStream = new MemoryStream())
         {

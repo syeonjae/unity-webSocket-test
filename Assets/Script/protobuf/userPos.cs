@@ -15,17 +15,18 @@ namespace Cw
         private global::ProtoBuf.IExtension __pbn__extensionData;
         global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
-
         [global::ProtoBuf.ProtoMember(1)]
+        public string name { get; set; }
+        [global::ProtoBuf.ProtoMember(2)]
         public int MemoberIndex { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2)]
+        [global::ProtoBuf.ProtoMember(3)]
         public int PosX { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3)]
+        [global::ProtoBuf.ProtoMember(4)]
         public int PosY { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4)]
+        [global::ProtoBuf.ProtoMember(5)]
         public int PoxZ { get; set; }
 
     }

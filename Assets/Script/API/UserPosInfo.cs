@@ -10,6 +10,7 @@ public class UserPosInfo : WebSocketBehavior
     protected override void OnMessage(MessageEventArgs e)
     {
         Cw.UserPos feed = Serializer.Deserialize<Cw.UserPos>(new MemoryStream(e.RawData));
-        Debug.Log($"({feed.PosX}, {feed.PosY}, {feed.PoxZ})");
+        Debug.Log($"{feed.name} : ({feed.PosX}, {feed.PosY}, {feed.PoxZ})");
+
     }
 }
